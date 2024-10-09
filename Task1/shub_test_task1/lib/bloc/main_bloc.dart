@@ -4,8 +4,10 @@ import 'package:bloc/bloc.dart';
 import 'package:shub_test_task1/bloc/main_event.dart';
 import 'package:shub_test_task1/bloc/main_state.dart';
 import 'package:shub_test_task1/repository/main_repository.dart';
+import 'package:shub_test_task1/ui/widget/custom_dialog_style.dart';
 import 'package:shub_test_task1/utils/file_picker_utils.dart';
 import 'package:shub_test_task1/utils/time_picker_utils.dart';
+import 'package:shub_test_task1/utils/utils.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
   final FilePickerUtils filePickerUtils;
@@ -43,7 +45,21 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   }
 
   void _onGetResult(GetResult event, Emitter<MainState> emit) {
-    final result = mainRepository.getResult(event.input);
-    emit(state.copyWith(totalAmount: result!.totalAmount, totalLiters: result.totalLiters, totalTransactions: result.totalTransactions));
+    if (event.input.file == null) {
+      CustomDialogStyle().warningDialog(
+          context: event.context,
+          title: "Vui lòng tải lên file báo cáo giao dịch");
+    } else if (!Utils()
+        .isValidStartEndTime(event.input.startTime!, event.input.endTime!)) {
+      CustomDialogStyle().warningDialog(
+          context: event.context,
+          title: "Giờ kết thúc không thể sớm hơn giờ bắt đầu");
+    } else {
+      final result = mainRepository.getResult(event.input);
+      emit(state.copyWith(
+          totalAmount: result!.totalAmount,
+          totalLiters: result.totalLiters,
+          totalTransactions: result.totalTransactions));
+    }
   }
 }

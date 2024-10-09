@@ -19,6 +19,7 @@ class MainApp extends StatelessWidget {
       create: (_) => MainBloc(FilePickerUtils(), TimePickerUtils(), MainRepository()),
       child: MaterialApp(
           title: "Task1 App",
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true),

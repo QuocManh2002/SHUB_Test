@@ -31,9 +31,10 @@ class SelectEndTime extends MainEvent {
 
 class GetResult extends MainEvent {
   final InputModel input;
+  final BuildContext context;
 
-  const GetResult({required this.input});
+  const GetResult({required this.input, required this.context});
 
   @override
-  List<Object> get props => [input];
+  List<Object> get props => [input, context];
 }

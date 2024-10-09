@@ -4,9 +4,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 class InputModel extends Equatable{
-  final File file;
-  final TimeOfDay startTime;
-  final TimeOfDay endTime;
+  final File? file;
+  final TimeOfDay? startTime;
+  final TimeOfDay? endTime;
 
   const InputModel({
     required this.file,
@@ -23,5 +23,5 @@ class InputModel extends Equatable{
   }
 
   @override
-  List<Object> get props => [file, startTime, endTime];
+  List<Object?> get props => [file, startTime, endTime];
 }
