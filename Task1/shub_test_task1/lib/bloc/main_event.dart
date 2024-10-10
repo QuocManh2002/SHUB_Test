@@ -12,21 +12,21 @@ abstract class MainEvent extends Equatable {
 class ImportFile extends MainEvent {}
 
 class SelectStartTime extends MainEvent {
-  final BuildContext context;
+  final TimeOfDay time;
 
-  const SelectStartTime({required this.context});
+  const SelectStartTime({required this.time});
 
   @override
-  List<Object> get props => [context];
+  List<Object> get props => [time];
 }
 
 class SelectEndTime extends MainEvent {
-  final BuildContext context;
+  final TimeOfDay time;
 
-  const SelectEndTime({required this.context});
+  const SelectEndTime({required this.time});
 
   @override
-  List<Object> get props => [context];
+  List<Object> get props => [time];
 }
 
 class GetResult extends MainEvent {

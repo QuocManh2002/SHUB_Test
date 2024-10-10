@@ -31,17 +31,11 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
   void _onSelectStartTime(
       SelectStartTime event, Emitter<MainState> emit) async {
-    final time = await timePickerUtils.pickTime(event.context);
-    if (time != null) {
-      emit(state.copyWith(startTime: time));
-    }
+    emit(state.copyWith(startTime: event.time));
   }
 
   void _onSelectEndTime(SelectEndTime event, Emitter<MainState> emit) async {
-    final time = await timePickerUtils.pickTime(event.context);
-    if (time != null) {
-      emit(state.copyWith(endTime: time));
-    }
+    emit(state.copyWith(endTime: event.time));
   }
 
   void _onGetResult(GetResult event, Emitter<MainState> emit) {

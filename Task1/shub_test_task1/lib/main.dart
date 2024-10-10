@@ -16,7 +16,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => MainBloc(FilePickerUtils(), TimePickerUtils(), MainRepository()),
+      create: (_) =>
+          MainBloc(FilePickerUtils(), TimePickerUtils(), MainRepository()),
       child: MaterialApp(
           title: "Task1 App",
           debugShowCheckedModeBanner: false,

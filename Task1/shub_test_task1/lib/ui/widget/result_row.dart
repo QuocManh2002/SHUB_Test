@@ -22,7 +22,7 @@ class ResultRow extends StatelessWidget {
         Expanded(
           child: Text(
             value,
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
             overflow: TextOverflow.clip,
             textAlign: TextAlign.right,
           ),

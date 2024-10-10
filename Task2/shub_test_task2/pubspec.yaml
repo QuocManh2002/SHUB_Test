@@ -1,0 +1,27 @@
+name: shub_test_task2
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.5 
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  intl: ^0.18.1
+  awesome_dialog: ^3.1.0
+  omni_datetime_picker: ^1.1.0
+  flutter_localization: ^0.2.1
+  form_field_validator: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
