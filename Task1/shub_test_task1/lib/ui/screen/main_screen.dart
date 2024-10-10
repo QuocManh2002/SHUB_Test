@@ -67,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
                     icon: const Icon(Icons.upload_file),
                     label: BlocBuilder<MainBloc, MainState>(
                       builder: (context, state) => Text(
-                          state.file == null ? "Nhập file" : "Nhập lại file"),
+                          state.file == null ? "Nhập file" : "Nhập lại file", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
                     )),
                 const SizedBox(
                   height: 15,
@@ -201,7 +201,7 @@ class _MainScreenState extends State<MainScreen> {
                         },
                         style: elevatedButtonStyle,
                         icon: const Icon(Icons.search),
-                        label: const Text("Lấy kết quả"));
+                        label: const Text("Lấy kết quả", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),));
                   },
                 ),
                 const SizedBox(
